@@ -41,7 +41,7 @@ export default MyApp
 //--pra criar
 //npx create-next-app nome_projeto
 //--para criar server next
-//yarn dev 
+//rodar no terminal => yarn dev 
 //INSTALA TYPESCRIPT
 // yarn add typescript @types/react @types/node -D
 //INSTALA BIBLIOTECA DE DATA
@@ -49,4 +49,6 @@ export default MyApp
 //INSTALA JSON SERVER (SIMULA UM API)
 // yarn add json-server -D
 //adicionar server no package.json 
-//roda no terminar yarn server
+//roda no terminal => yarn server
+//INSTALAR O AXIOS PARA FAZER REQUISICOES
+//yarn add axios
