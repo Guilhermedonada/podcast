@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
 import Image from 'next/image' //usado com o next para evitar imagens pesadas, precisa criar next.config.js na raiz e configurar
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
@@ -8,6 +8,7 @@ import ptBR from 'date-fns/locale/pt-BR'
 import { convertDurationToTimeString } from "../utils/convertDurationToTimeString"
 
 import styles from './home.module.scss'
+import { PlayerContext } from "../contexts/PlayerContext"
 
 type Episode = {
   id: string,
@@ -27,6 +28,9 @@ type HomeProps = {
 }
 
 export default function Home({latestEpisodes, allEpisodes}: HomeProps) {  
+
+  const { play } = useContext(PlayerContext)
+  
   return (
     <div className={styles.homepage}>
       <section className={styles.latestEpisodes}>
@@ -50,8 +54,8 @@ export default function Home({latestEpisodes, allEpisodes}: HomeProps) {
                   <span>{episode.publishedAt}</span>
                   <span>{episode.durationAsString}</span>
                 </div>
-                <button type="button">
-                  <img src="/play-green.svg" alt="" alt="Tocar episodio"/>
+                <button type="button" onClick={ () => play(episode)}>
+                  <img src="/play-green.svg"  alt="Tocar episodio"/>
                 </button>
               </li>
             )

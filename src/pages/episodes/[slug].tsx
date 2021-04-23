@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import { api } from '../../services/api'
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString'
 
+
 import styles from './episode.module.scss'
 
 type Episode = {
@@ -26,6 +27,12 @@ type EpisodeProps = {
 }
 
 export default function Episode({episode} : EpisodeProps) {
+
+  const router = useRouter()
+
+  if(router.isFallback){
+    return <p>Carregando ...</p>
+  }
 
   return (
     <div className={styles.episode}>
@@ -62,9 +69,29 @@ export default function Episode({episode} : EpisodeProps) {
   )
 }
 
+//dentro do paths vai as paginas que serao geradas estaticas no momento do bild
+//fallback = false , nao busca episodio caso nao ache. fallback =true busca o episodio caso nao ache. fallback= blocking, só vai pra tela depois que os dados forem carregados
 export const getStaticPaths: GetStaticPaths = async () => {
+  
+  const {data} = await api.get('episodes', {
+    params: {
+      _limit: 2,
+      _sort: 'published_at',
+      _order: 'desc'
+    }
+  })
+
+  const paths = data.map(episode => {
+    return {
+      params: {
+        slug: episode.id
+      }
+    }
+  })
+  
+  
   return {
-    paths: [],
+    paths,
     fallback: 'blocking'
   }
 }
