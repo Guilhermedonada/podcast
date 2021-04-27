@@ -1,8 +1,8 @@
 .playerContainer {
     padding: 3rem 4rem;
     width: 26.5rem;
-    height: 100vh;
-
+    max-height: 100vh;
+    overflow: auto;
     background: var(--purple-500);
     color: var(--white);
     display: flex;
