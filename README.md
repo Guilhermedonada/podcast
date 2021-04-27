@@ -8,17 +8,17 @@
 <b>Dependences</b>
 
 Cria o projeto
-1. npx create-next-app nome_projeto
+- npx create-next-app nome_projeto
 Instala typescript
-2. yarn add typescript @types/react @types/node -D
+- yarn add typescript @types/react @types/node -D
 Instala biblioteca de data
-3. yarn add date-fns
+- yarn add date-fns
 Instala JSON SERVER (simula api)
-4. yarn add json-server -D
+- yarn add json-server -D
 Instala o axios para fazer requisições
-5. yarn add axios
+- yarn add axios
 Instala o slider (posicionar música)
-6. yarn add rc-slider
+- yarn add rc-slider
 
 
 
