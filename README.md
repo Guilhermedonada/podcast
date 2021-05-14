@@ -1,5 +1,10 @@
 # podcast
 
+![Captura de Tela 2021-05-14 às 10 55 39](https://user-images.githubusercontent.com/24704615/118280951-129ed480-b4a3-11eb-9922-9d21c95f412f.png)
+![Captura de Tela 2021-05-14 às 10 56 10](https://user-images.githubusercontent.com/24704615/118280985-1c283c80-b4a3-11eb-9621-a6fd42a8415d.png)
+
+
+
 <b>NEXTJS / REACTJS / TYPESCRIPT  (SPA, SSR and SSG)</b>
 
 1. To run the application. => yarn dev
